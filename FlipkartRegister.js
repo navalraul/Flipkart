@@ -14,10 +14,25 @@ function Register(event) {
     if(Name && Email && Password && ConfirmPassword){
         if(Password.length >=8 && ConfirmPassword){
             if(Password == ConfirmPassword){
-        
 
-        localStorage.setItem()        
-
+                var Ls = JSON.parse(localStorage.getItem("FlipkartUsers")) || []
+                var flag = false;
+                for (var i = 0; i < Ls.length; i++) {
+                    if (Ls[i].userEmail == Email) {
+                        flag = true;
+                    }
+                }
+                if(!flag) {
+                    var userdata = {userName: Name,userEmail: Email,userPassword: Password,userConfirmPassword: ConfirmPassword}
+                    Ls.push(userdata);
+                    localStorage.setItem("FlipkartUsers",JSON.stringify(Ls))   
+                    alert("Registration Successful");
+                    window.location.href = `./FlipkartLogin.html`;
+                    document.getElementById("FlipkartuserName").value = ""
+                    document.getElementById("FlipkartuserEmail").value = ""
+                    document.getElementById("FlipkartuserPassword").value = ""
+                    document.getElementById("FlipkartuserConfirmpassword").value = ""     
+                }
             }else{
                 console.log("Password not Matched")
                 alert("Password not Matched")

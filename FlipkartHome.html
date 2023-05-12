@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/1187491213.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: arial,sans-serif;
+        }
+        #navbar {
+            width: 100%;
+            height: 80px;
+            border: 2px solid red;
+            background-color: #2874f0;
+            display: flex;
+            justify-content: space-around;
+            /* position: fixed; */
+            position: sticky;
+            top: 0px;
+        }
+        #navbar >div:nth-child(1){
+            width: 85%;
+            height: 80px;
+            /* border: 2px solid red; */
+            display: flex;
+            /* padding: 5px 0px; */
+        }
+        .navleft >div:nth-child(1) {
+            width: 9%;
+            height: 60px;
+            /* border: 1px solid black; */
+            margin: 8px 0px;
+        }
+        .navleft >div:nth-child(1) >img {
+            width: 100%;
+            height: 60px;
+        }
+        .navleft >div:nth-child(1) >img:hover {
+            cursor: pointer;
+        }
+        .navleft >div:nth-child(2) {
+            width: 45%;
+            height: 60px;
+            /* border: 1px solid black; */
+            margin: 8px 0px;
+        }
+        .navleft >div:nth-child(2) >input {
+            width: 85%;
+            height: 35px;
+            margin: 10px 0px 10px 10px;
+        }
+        .navleft >div:nth-child(2) >button {
+            height: 40px;
+            width: 10%;
+            border: none;
+            margin: 0px -5px;
+        }
+        .navleft >div:nth-child(2) >button:hover{
+            cursor: pointer;
+        }
+        .navleft >div:nth-child(3) {
+            width: 12%;
+            height: 60px;
+            /* border: 1px solid black; */
+            margin: 8px 0px;
+        }
+        .navleft >div:nth-child(3) >button {
+            width: 95%;
+            height: 30px;
+            margin: 14px 3px;
+            font-size: 14px;
+            color: #2874f0;
+            font-weight: bold;
+        }
+        .navleft >div:nth-child(3) >button:hover{
+            cursor: pointer;
+        }
+        .navleft >div:nth-child(4) {
+            width: 15%;
+            height: 60px;
+            /* border: 1px solid black; */
+            margin: 8px 0px;
+        }
+        .navleft >div:nth-child(4) >h5 {
+            font-size: 15px;
+            color: snow;
+            margin: 20px 0px 20px 20px;
+        }
+        .navleft >div:nth-child(4) >h5 {
+            cursor: pointer;
+        }
+        .navleft >div:nth-child(5) {
+            width: 10%;
+            height: 60px;
+            /* border: 1px solid black; */
+            margin: 8px 0px;
+        }
+        .navleft >div:nth-child(5) >h5 {
+            font-size: 15px;
+            color: snow;
+            margin: 20px 0px 20px 25px;
+        }
+        .navleft >div:nth-child(5) >h5 {
+            cursor: pointer;
+        }
+        .navleft >div:nth-child(6) {
+            width: 10%;
+            height: 60px;
+            /* border: 1px solid black;  */
+            margin: 8px 0px;
+        }
+        .navleft >div:nth-child(6) >h5 {
+            font-size: 15px;
+            color: snow;
+            margin: 20px 0px 20px 20px;
+        }
+        .navleft >div:nth-child(6) >h5:hover {
+            cursor: pointer;
+        }
+        /* #navbar >div:nth-child(2){
+            width: 40%;
+            height: 80px;
+            border: 2px solid red;
+        } */
+        #details {
+            width: 100%;
+            height: 130px;
+            margin: 0px;
+            border-bottom: 1px solid rgb(181, 173, 173);
+            /* border: 2px solid red; */
+            /* box-shadow: 0px 0px 2px gray; */
+        }
+        
+        .det {
+            width: 95%;
+            height: 100px;
+            /* border: 1px solid black; */
+            margin: 15px 30px;
+            display: flex;
+        }
+        .det >div {
+            width: 20%;
+            height: 100px;
+            /* border: 1px solid gold; */
+        }
+        .det >div >img {
+            width: 70%;
+            height: 80px;
+            margin: 0px 20px;
+        }
+        .det >div >h5 {
+            margin: 0px 0px 10px 30px;
+            color: rgb(59, 57, 57);
+        }
+        .det >div >h5:hover {
+            cursor: pointer;
+            color: #2874f0;
+        }
+        #image {
+            width: 100%;
+            height: 300px;
+            margin: 10px 0px;
+            /* border: 2px solid red; */
+        }
+        .img >img{
+            width: 100%;
+            height: 300px;
+        }
+        #product1 {
+            width: 100%;
+            height: 250px;
+            border: 2px solid red;
+            display: flex;
+        }
+        .proleft {
+            width: 20%;
+            height: 250px;
+            border: 2px solid green;
+        }
+        .proright {
+            width: 80%;
+            height: 250px;
+            border: 2px solid green;
+            display: flex;
+        }
+        .proright >div {
+            width: 25%;
+            height: 250px;
+            border: 2px solid gold;
+        }
+        .proright >div >img {
+            width: 50%;
+            height: 100px;
+        }
+        #footer {
+            width: 100%;
+            height: 400px;
+            border: 2px solid gold;
+            background-color: #172337;
+        }
+        .footop {
+            width: 100%;
+            height: 300px;
+            border: 1px solid brown;
+            display: flex;
+        }
+        .footop >div:nth-child(1) {
+            width: 60%;
+            height: 300px;
+            border: 1px solid red;
+        }
+        .footop >div:nth-child(2) {
+            width: 40%;
+            height: 300px;
+            border: 1px solid red;
+        }
+        .foobot {
+            width: 100%;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div class="navleft">
+            <div>
+                <img src="https://content.couponspy.in/public/shop/240.jpg"/>
+            </div>
+            <div>
+                <input type="text" placeholder="Search for products, brands & more"/>
+                <button><i class="fa-solid fa-magnifying-glass" style="color: #3776e1;"></i></button>
+            </div>
+            <div>
+                <button>Login</button>
+            </div>
+            <div id="switch">
+                <button onclick="window.location.href=`./FlipkartLogin.html`">Login</button>
+                <button onclick="window.location.href=`./FlipkartRegister.html`">Register</button>
+            </div>
+            <div id="logout"></div>
+            <div>
+                <h5>Become a seller</h5>
+            </div>
+            <div>
+                <h5>More<i class="fa-solid fa-angle-down" style="color: #c5ccd8;"></i></h5>
+            </div>
+            <div>
+                <!-- <i class="fa-solid fa-cart-shopping" style="color: #d7dce5;"></i> -->
+                <h5><i class="fa-solid fa-cart-shopping" style="color: #d7dce5;"></i>Cart</h5>
+            </div>
+        </div>
+    </div>
+    <div id="Flipkartproducts"></div>
+    <div id="details">
+        <div class="det">
+            <div>
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100"/>
+                <h5>Grocery</h5>
+            </div>
+            <div>
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100"/>
+                <h5>Mobiles</h5>
+            </div>
+            <div>
+                <img src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/0d75b34f7d8fbcb3.png?q=100"/>
+                <h5>Fashion</h5>
+            </div>
+            <div>
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100"/>
+                <h5>Electronics</h5>
+            </div>
+            <div>
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100"/>
+                <h5>Home</h5>
+            </div>
+            <div>
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100"/>
+                <h5>Appliances</h5>
+            </div>
+            <div>
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/71050627a56b4693.png?q=100"/>
+                <h5>Travel</h5>
+            </div>
+            <div>
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100"/>
+                <h5>Top Offers</h5>
+            </div>
+            <div>
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100"/>
+                <h5>Toys & More</h5>
+            </div>
+            <div>
+                <img src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/05d708653beff580.png?q=100"/>
+                <h5>Two Wheeler</h5>
+            </div>
+        </div>
+    </div>
+    <div id="image">
+        <div class="img">
+            <img src="https://rukminim1.flixcart.com/fk-p-flap/1688/280/image/7205c24b49f35001.jpg?q=50"/>
+        </div>
+    </div>
+    <div id="product1">
+        <div class="proleft">
+            <h4>Best of</h4>
+            <h5>Electronics</h5>
+            <button>View All</button>
+        </div>
+        <div class="proright">
+            <div>
+                <img src="https://rukminim1.flixcart.com/image/200/200/kb89ea80/printer/g/q/2/canon-ts307-direct-wifi-original-imafsmk9yu57jagn.jpeg?q=70"/>
+                <h4>Printers</h4>
+                <h5>From 2366</h5>
+                <h6>Canon</h6>
+            </div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footop">
+            <div>1</div>
+            <div>2</div>
+        </div>
+        <div class="foobot">2</div>
+    </div>
+
+
+
+    <script>
+        window.onload = function () {
+            var divToShowProducts = document.getElementById("Flipkartproducts");
+            var finalData = "";
+
+            var productsFromLS = JSON.parse(localStorage.getItem("FlipkartProducts"));
+            for (var i=0;i < productsFromLS.length;i++){
+                // console.log(productsFromLS[i],'productFromLS')
+                finalData += `<div onclick ='redirect(${JSON.stringify(productsFromLS[i])})'id='singlepro'><img src =${productsFromLS[i].proImage} /><h3>${productsFromLS[i].proName}</h3><p>${productsFromLS[i].proPrice}</p></div>`;
+            }
+            console.log(finalData,"finalData here")
+            divToShowProducts.innerHTML = finalData;
+
+            alert("working")
+            var currentUser = JSON.parse(localStorage.getItem("FlipkartcurrentUser"));
+
+            if (!!currentUser){
+                var logoutDiv = document.getElementById("logout");
+                var divFromHtml = document.getElementById("switch");
+
+                var button = '<button onclick="logout()">Logout</button>'
+                var name = `<h1>${currentUser.userName}</h1>`;
+                divFromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
+            }else {
+                alert("Current User Absent")
+            }
+            // console.log(currentUser,"userEmail")
+        }
+        function logout(){
+            alert("Working")
+            localStorage.removeItem("FlipkartcurrentUser");
+            window.location.reload();
+        }
+        
+        function redirect(Flipkartproduct) {
+            var singleproduct = JSON.stringify(Flipkartproduct);
+
+            localStorage.setItem("Flipkartcurrent-product",singleproduct);
+            window.location.href = './SingleProduct.html'
+        }
+        
+    </script>
+</body>
+</html>

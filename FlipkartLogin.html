@@ -106,9 +106,9 @@
             </div>
             <div class="right">
                 <div>
-                    <form>
-                        <input type="email" placeholder="Enter your Email"/><br>
-                        <input type="password" placeholder="Enter your Password"/><br>
+                    <form onsubmit="login(event)">
+                        <input id="FlipkartuserEmail" type="email" placeholder="Enter your Email"/><br>
+                        <input id="FlipkartuserPassword" type="password" placeholder="Enter your Password"/><br>
                         <input type="submit" value="Login"/>
                     </form>
                 </div>
@@ -118,5 +118,9 @@
             </div>
         </div>
     </div>
+
+
+
+    <script src="./FlipkartLogin.js"></script>
 </body>
 </html>

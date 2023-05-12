@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/1187491213.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: arial,sans-serif;
+        }
+        #navbar {
+            width: 100%;
+            height: 80px;
+            border: 2px solid red;
+            background-color: #2874f0;
+            display: flex;
+            justify-content: space-around;
+            /* position: fixed; */
+            position: sticky;
+            top: 0px;
+        }
+        #navbar >div:nth-child(1){
+            width: 85%;
+            height: 80px;
+            /* border: 2px solid red; */
+            display: flex;
+            /* padding: 5px 0px; */
+        }
+        .navleft >div:nth-child(1) {
+            width: 9%;
+            height: 60px;
+            /* border: 1px solid black; */
+            margin: 8px 0px;
+        }
+        .navleft >div:nth-child(1) >img {
+            width: 100%;
+            height: 60px;
+        }
+        .navleft >div:nth-child(1) >img:hover {
+            cursor: pointer;
+        }
+        .navleft >div:nth-child(2) {
+            width: 45%;
+            height: 60px;
+            /* border: 1px solid black; */
+            margin: 8px 0px;
+        }
+        .navleft >div:nth-child(2) >input {
+            width: 85%;
+            height: 35px;
+            margin: 10px 0px 10px 10px;
+        }
+        .navleft >div:nth-child(2) >button {
+            height: 40px;
+            width: 10%;
+            border: none;
+            margin: 0px -5px;
+        }
+        .navleft >div:nth-child(2) >button:hover{
+            cursor: pointer;
+        }
+        .navleft >div:nth-child(3) {
+            width: 12%;
+            height: 60px;
+            /* border: 1px solid black; */
+            margin: 8px 0px;
+        }
+        .navleft >div:nth-child(3) >button {
+            width: 95%;
+            height: 30px;
+            margin: 14px 3px;
+            font-size: 14px;
+            color: #2874f0;
+            font-weight: bold;
+        }
+        .navleft >div:nth-child(3) >button:hover{
+            cursor: pointer;
+        }
+        .navleft >div:nth-child(4) {
+            width: 15%;
+            height: 60px;
+            /* border: 1px solid black; */
+            margin: 8px 0px;
+        }
+        .navleft >div:nth-child(4) >h5 {
+            font-size: 15px;
+            color: snow;
+            margin: 20px 0px 20px 20px;
+        }
+        .navleft >div:nth-child(4) >h5 {
+            cursor: pointer;
+        }
+        .navleft >div:nth-child(5) {
+            width: 10%;
+            height: 60px;
+            /* border: 1px solid black; */
+            margin: 8px 0px;
+        }
+        .navleft >div:nth-child(5) >h5 {
+            font-size: 15px;
+            color: snow;
+            margin: 20px 0px 20px 25px;
+        }
+        .navleft >div:nth-child(5) >h5 {
+            cursor: pointer;
+        }
+        .navleft >div:nth-child(6) {
+            width: 10%;
+            height: 60px;
+            /* border: 1px solid black;  */
+            margin: 8px 0px;
+        }
+        .navleft >div:nth-child(6) >h5 {
+            font-size: 15px;
+            color: snow;
+            margin: 20px 0px 20px 20px;
+        }
+        .navleft >div:nth-child(6) >h5:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div class="navleft">
+            <div>
+                <img src="https://content.couponspy.in/public/shop/240.jpg"/>
+            </div>
+            <div>
+                <input type="text" placeholder="Search for products, brands & more"/>
+                <button><i class="fa-solid fa-magnifying-glass" style="color: #3776e1;"></i></button>
+            </div>
+            <div>
+                <button>Login</button>
+            </div>
+            <div>
+                <h5>Become a seller</h5>
+            </div>
+            <div>
+                <h5>More<i class="fa-solid fa-angle-down" style="color: #c5ccd8;"></i></h5>
+            </div>
+            <div>
+                <!-- <i class="fa-solid fa-cart-shopping" style="color: #d7dce5;"></i> -->
+                <h5><i class="fa-solid fa-cart-shopping" style="color: #d7dce5;"></i>Cart</h5>
+            </div>
+        </div>
+    </div>
+    <div id="singleproduct"></div>
+
+
+
+
+    <script>
+        window.onload = function () {
+            var product = JSON.parse(localStorage.getItem("Flipkartcurrent-product"));
+
+            var divToAppendProduct = document.getElementById("singleproduct");
+            var structure = `<div onlick  'redirect(${JSON.stringify(product)})' id='singlePro'> <img src='${product.proImage}' /> <br/> <h1>${product.proName}</h1><br/> <p>${product.proPrice}</p><br/> <button onclick='addCart(${JSON.stringify(product)})'>Add to cart</button> </div>`
+            console.log(structure,"here");
+            divToAppendProduct.innerHTML = structure;
+
+        }
+        
+        function addCart(product) {
+            // alert ("Adding to cart..")
+            var currentUser = JSON.parse(localStorage.getItem("FlipkartcurrentUser"));
+
+            var userData = JSON.parse(localStorage.getItem("FlipkartUsers"));
+            var flagForUser = false;
+            for (var i=0;i< userData.length;i++){
+                if(currentUser.email === userData[i].email){
+                    // alert("Got")
+                    if(userData[i].cartProducts == undefined) {
+                        userData[i].cartProducts = [product];
+                    }else {
+                        userData[i].cartProducts.push(product);
+                    }
+                    alert("Product added to cart");
+                    window.location.href = './Cart.html'
+                }
+            }
+            console.log(userData,'userData');
+            localStorage.setItem("FlipkartUsers",JSON.stringify(userData))
+        }
+        
+    </script>
+</body>
+</html>
