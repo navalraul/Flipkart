@@ -120,6 +120,25 @@
         .navleft >div:nth-child(6) >h5:hover {
             cursor: pointer;
         }
+        .main {
+            width: 100%;
+            height: 800px;
+            border: 1px solid red;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #singleproduct {
+            width: 40%;
+            height: 600px;
+            border: 1px solid black;
+        }
+        .right {
+            width: 58%;
+            height: 500px;
+            border: 1px solid green;
+        }
+        
     </style>
 </head>
 <body>
@@ -133,7 +152,7 @@
                 <button><i class="fa-solid fa-magnifying-glass" style="color: #3776e1;"></i></button>
             </div>
             <div>
-                <button>Login</button>
+                <!-- <button>Login</button> -->
             </div>
             <div>
                 <h5>Become a seller</h5>
@@ -147,7 +166,20 @@
             </div>
         </div>
     </div>
+    <div class="main">
     <div id="singleproduct"></div>
+    <div class="right">
+        <h2>Canon EOS M50 Mark II Mirrorless Camera EF-M15-45mm is STM Lens  (Black)</h2>
+        <h1>₹59,990</h1>
+        <h4>Available offers</h4>
+        <h5>Bank OfferFlat ₹1250 Discount on HDFC Bank Credit Card EMI Transactions on orders of ₹15,000 and above</h5>
+        <h5>Bank OfferFlat ₹4000 Discount on HDFC Bank Credit Card EMI Transactions on orders of ₹50,000 and above</h5>
+        <h5>Bank Offer10% off on Kotak Credit Card EMI Transactions, up to ₹1,500, on orders of ₹5,000 and above</h5>
+        <h5>Partner OfferSign up for Flipkart Pay Later and get Flipkart Gift Card worth up to ₹500*</h5>
+        <p>4K and vertical movies, Live YouTube streaming, Auto video transcoding, <br>Use as a webcam, Great in low light, 10fps continuous shooting,<br> 3.5mm external microphone input, Full HD movie at 60p, <br>pair the camera with your smartphone via Wi-Fi or Bluetooth to perform remote shooting,<br> a handy trick for taking group photos.</p>
+    </div>
+
+    </div>
 
 
 
@@ -157,7 +189,7 @@
             var product = JSON.parse(localStorage.getItem("Flipkartcurrent-product"));
 
             var divToAppendProduct = document.getElementById("singleproduct");
-            var structure = `<div onlick  'redirect(${JSON.stringify(product)})' id='singlePro'> <img src='${product.proImage}' /> <br/> <h1>${product.proName}</h1><br/> <p>${product.proPrice}</p><br/> <button onclick='addCart(${JSON.stringify(product)})'>Add to cart</button> </div>`
+            var structure = `<div  onlick  'redirect(${JSON.stringify(product)})' id='singlePro'> <img src=${product.proImage} style="width:80%; height:350px; margin:40px 60px" /> <br/> <h1> ${product.proName}</h1><br/> <p>${product.proPrice}</p><br/> <button onclick='addCart(${JSON.stringify(product)})'>Add to cart</button> </div>`
             console.log(structure,"here");
             divToAppendProduct.innerHTML = structure;
 
