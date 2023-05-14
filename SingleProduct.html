@@ -130,13 +130,14 @@
         }
         #singleproduct {
             width: 40%;
-            height: 600px;
+            height: 650px;
             border: 1px solid black;
         }
         .right {
             width: 58%;
             height: 500px;
             border: 1px solid green;
+            
         }
         
     </style>
@@ -189,12 +190,12 @@
             var product = JSON.parse(localStorage.getItem("Flipkartcurrent-product"));
 
             var divToAppendProduct = document.getElementById("singleproduct");
-            var structure = `<div  onlick  'redirect(${JSON.stringify(product)})' id='singlePro'> <img src=${product.proImage} style="width:80%; height:350px; margin:40px 60px" /> <br/> <h1> ${product.proName}</h1><br/> <p>${product.proPrice}</p><br/> <button onclick='addCart(${JSON.stringify(product)})'>Add to cart</button> </div>`
+            var structure = `<div  onlick  'redirect(${JSON.stringify(product)})' id='singlePro'> <img src=${product.proImage} style="width:80%; height:350px; margin:40px 60px" /> <br/> <h1> ${product.proName}</h1><br/> <p>${product.proPrice}</p><br/> <button onclick='addCart(${JSON.stringify(product)})' style="width:50%; border:1px solid red; height:30px; margin:10px 100px; background-color: red;">Add to cart </button> </div>`
             console.log(structure,"here");
             divToAppendProduct.innerHTML = structure;
 
         }
-        
+
         function addCart(product) {
             // alert ("Adding to cart..")
             var currentUser = JSON.parse(localStorage.getItem("FlipkartcurrentUser"));
